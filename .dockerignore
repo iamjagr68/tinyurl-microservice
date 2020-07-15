@@ -1,0 +1,8 @@
+.git
+.idea
+logs
+coverage
+node_modules
+npm-debug.log
+.gitignore
+.env*

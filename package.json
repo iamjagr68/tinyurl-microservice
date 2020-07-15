@@ -1,0 +1,73 @@
+{
+  "name": "tinyurl-microservice",
+  "version": "0.1.0",
+  "description": "TinyURL Express Micro-Service",
+  "engines": {
+    "node": ">=10.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamjagr68/tinyurl-microservice"
+  },
+  "author": "Ryan Gilreath",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build-ts && npm run lint",
+    "build-ts": "tsc",
+    "debug": "npm run build && npm run watch-debug",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+    "serve": "node dist/server.js",
+    "serve-debug": "nodemon --inspect dist/server.js",
+    "start": "npm run serve",
+    "test": "jest --forceExit --coverage --verbose",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
+    "watch-node": "nodemon dist/server.js",
+    "watch-test": "npm run test -- --watchAll",
+    "watch-ts": "tsc -w"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "hashids": "^2.2.1",
+    "helmet": "^3.23.3",
+    "http-status": "^1.4.2",
+    "mongoose": "^5.9.23",
+    "validator": "^13.1.1",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/chai": "^4.2.11",
+    "@types/compression": "^1.7.0",
+    "@types/concurrently": "^5.2.1",
+    "@types/eslint": "^7.2.0",
+    "@types/express": "^4.17.7",
+    "@types/hapi__joi": "^17.1.4",
+    "@types/hashids": "^1.0.30",
+    "@types/helmet": "0.0.47",
+    "@types/jest": "^26.0.4",
+    "@types/mongoose": "^5.7.31",
+    "@types/node": "^14.0.22",
+    "@types/nodemon": "^1.19.0",
+    "@types/supertest": "^2.0.10",
+    "@types/validator": "^13.1.0",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "chai": "^4.2.0",
+    "concurrently": "^5.2.0",
+    "eslint": "^7.4.0",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.1.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.6"
+  }
+}

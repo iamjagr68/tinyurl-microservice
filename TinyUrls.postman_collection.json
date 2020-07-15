@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "f00f40cf-3841-440b-82dd-fb9794a66401",
+		"name": "TinyUrls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST: /api/v1/tinyurls - Create a TinyUrl",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"target_url\": \"https://reddit.com\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/tinyurls",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tinyurls"
+					]
+				},
+				"description": "Request to create a TinyURL"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /api/v1/tinyurls - List all TinyUrls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tinyurls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tinyurls"
+					]
+				},
+				"description": "Request to get list of all TinyUrls"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /api/v1/tinyurls/xxxxxxxxx - Get a single TinyUrl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tinyurls/KZGrkp9dx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tinyurls",
+						"KZGrkp9dx"
+					]
+				},
+				"description": "Request to fetch a single TinyUrl. Replace xxxxxxxxx with the an existing TinyUrl hash id."
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /xxxxxxxxx - Follow a TinyUrl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/KZGrkp9dx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"KZGrkp9dx"
+					]
+				},
+				"description": "Request to load and follow a TinyUrl. Replace xxxxxxxxx with an existing TinyUrl id hash."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
